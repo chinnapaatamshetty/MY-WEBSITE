@@ -1,0 +1,41 @@
+<!DOCTYPE html>  <html>  
+<head>  
+    <title>Student Search</title>  
+    <style>  
+        body {  
+            font-family: Arial;  
+            text-align: center;  
+            margin-top: 50px;  
+        }  
+        input {  
+            padding: 10px;  
+            width: 200px;  
+        }  
+        button {  
+            padding: 10px 20px;  
+            margin-top: 10px;  
+        }  
+    </style>  
+</head>  
+<body>  <h2>Student ID Search</h2>  <input type="text" id="studentId" placeholder="Enter Student ID">  
+<br>  
+<button onclick="getStudent()">Search</button>  <h3 id="result"></h3>  <script>  
+function getStudent() {  
+    let id = document.getElementById("studentId").value;  
+  
+    let students = {  
+        "101": {name: "Ravi", branch: "CSE"},  
+        "102": {name: "Sita", branch: "ECE"},  
+        "103": {name: "Rahul", branch: "AI&ML"}  
+    };  
+  
+    if (students[id]) {  
+        document.getElementById("result").innerHTML =  
+            "Name: " + students[id].name + "<br>" +  
+            "Branch: " + students[id].branch;  
+    } else {  
+        document.getElementById("result").innerHTML = "Student Not Found";  
+    }  
+}  
+</script>  </body>  
+</html>
